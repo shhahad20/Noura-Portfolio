@@ -44,7 +44,7 @@ $status-live: linear-gradient(135deg, #a8edea, #fed6e3);
   color: $text-primary;
   padding: 6rem 2rem;
   overflow: hidden;
-border: 1px solid red;
+
   &__container {
     position: relative;
     max-width: 1200px;
@@ -65,13 +65,13 @@ border: 1px solid red;
   }
 
   &__title {
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 500;
     margin-bottom: 1rem;
     line-height: 1.1;
 
     @media (min-width: 768px) {
-      font-size: 5.5rem;
+      font-size: 3rem;
     }
   }
 
@@ -82,7 +82,7 @@ border: 1px solid red;
   }
 
   &__subtitle {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: $text-secondary;
     font-weight: 300;
     max-width: 600px;
@@ -90,30 +90,30 @@ border: 1px solid red;
   }
 
   // Floating Elements
-  &__floating-element {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(40px);
-    z-index: 1;
+//   &__floating-element {
+//     position: absolute;
+//     border-radius: 50%;
+//     filter: blur(40px);
+//     z-index: 1;
 
-    &--1 {
-      width: 200px;
-      height: 200px;
-      background: linear-gradient(135deg, $accent-primary, $accent-secondary);
-      top: -50px;
-      right: 10%;
-      opacity: 0.3;
-    }
+//     &--1 {
+//       width: 200px;
+//       height: 200px;
+//       background: linear-gradient(135deg, $accent-primary, $accent-secondary);
+//       top: -50px;
+//       right: 10%;
+//       opacity: 0.3;
+//     }
 
-    &--2 {
-      width: 150px;
-      height: 150px;
-      background: linear-gradient(135deg, $accent-tertiary, $accent-secondary);
-      bottom: 20px;
-      left: 15%;
-      opacity: 0.2;
-    }
-  }
+//     &--2 {
+//       width: 150px;
+//       height: 150px;
+//       background: linear-gradient(135deg, $accent-tertiary, $accent-secondary);
+//       bottom: 20px;
+//       left: 15%;
+//       opacity: 0.2;
+//     }
+//   }
 
   // Projects Grid
   &__grid {

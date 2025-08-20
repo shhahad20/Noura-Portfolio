@@ -14,7 +14,7 @@ const RecentProjects = () => {
       title: "E-Commerce Mobile App",
       category: "Mobile Development",
       description: "A comprehensive shopping app with AR try-on features and seamless checkout experience.",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
+      image: "./apple.jpg",
       tech: ["React Native", "Node.js", "MongoDB"],
       year: "2024",
       status: "Featured"
@@ -24,7 +24,7 @@ const RecentProjects = () => {
       title: "AI-Powered Analytics Dashboard",
       category: "Web Development",
       description: "Real-time business intelligence platform with predictive analytics and custom reporting.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      image: "./Lan.jpg",
       tech: ["React", "Python", "TensorFlow"],
       year: "2024",
       status: "New"
@@ -34,7 +34,7 @@ const RecentProjects = () => {
       title: "Brand Identity System",
       category: "Design",
       description: "Complete brand overhaul including logo design, typography, and brand guidelines.",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
+      image: "./data.jpg",
       tech: ["Adobe Creative Suite", "Figma"],
       year: "2023",
       status: "Award Winner"
@@ -44,7 +44,7 @@ const RecentProjects = () => {
       title: "Blockchain Voting System",
       category: "Blockchain",
       description: "Secure, transparent voting platform built on Ethereum with smart contract integration.",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
+      image: "./master.jpg",
       tech: ["Solidity", "Web3.js", "React"],
       year: "2023",
       status: "Open Source"
@@ -54,7 +54,7 @@ const RecentProjects = () => {
       title: "Fitness Tracking IoT App",
       category: "IoT Development",
       description: "Connected fitness ecosystem with wearable integration and personalized coaching.",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+      image: "./munchable.jpg",
       tech: ["Flutter", "Firebase", "IoT"],
       year: "2023",
       status: "Live"
@@ -84,8 +84,8 @@ const RecentProjects = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="recent-projects__title">
-              Recent
-              <span className="recent-projects__title-accent">Projects</span>
+              Recent Projects
+              {/* <span className="recent-projects__title-accent">Projects</span> */}
             </h2>
             <p className="recent-projects__subtitle">
               Crafting digital experiences that make a difference
@@ -93,7 +93,7 @@ const RecentProjects = () => {
           </motion.div>
 
           {/* Floating Elements */}
-          <motion.div 
+          {/* <motion.div 
             className="recent-projects__floating-element recent-projects__floating-element--1"
             animate={{ 
               y: [0, -20, 0],
@@ -117,7 +117,7 @@ const RecentProjects = () => {
               ease: "easeInOut",
               delay: 1
             }}
-          />
+          /> */}
         </div>
 
         {/* Projects Grid */}
@@ -213,7 +213,7 @@ const RecentProjects = () => {
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
+        {/* <motion.div
           className="recent-projects__cta"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { 
@@ -232,7 +232,7 @@ const RecentProjects = () => {
               →
             </motion.div>
           </button>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Background Elements */}

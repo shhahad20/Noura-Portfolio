@@ -44,7 +44,7 @@ const RecentProjects = () => {
       title: "Blockchain Voting System",
       category: "Blockchain",
       description: "Secure, transparent voting platform built on Ethereum with smart contract integration.",
-      image: "./master.jpg",
+      image: "./master1.jpg",
       tech: ["Solidity", "Web3.js", "React"],
       year: "2023",
       status: "Open Source"

@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 // import About from './components/About';
 import CoreCompetencies from './components/Core';
 import RecentProjects from './components/Projects';
+import ProfessionalExperience from './components/ProfessionalExperience';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       {/* <About/> */}
       <CoreCompetencies/>
       <RecentProjects/>
+      <ProfessionalExperience/>
     </>
   )
 }

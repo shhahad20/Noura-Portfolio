@@ -92,6 +92,7 @@
     transform: translateY(30px);
     display: flex;
     flex-direction: column;
+
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -112,7 +113,9 @@
   .experience-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
+    align-items: flex-start;
+    gap: 0.5rem;
     margin-bottom: 1rem;
 
     h3 {
@@ -123,7 +126,7 @@
     }
 
     .period {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #f2f2f2;
       padding: 0.3rem 0.8rem;
       background: rgba(33, 150, 243, 0.1);

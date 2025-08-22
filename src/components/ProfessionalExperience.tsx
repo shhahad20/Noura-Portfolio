@@ -69,7 +69,7 @@ const ProfessionalExperience: React.FC = () => {
       },
     },
     {
-      company: '"Bruno" Home Bakery Project',
+      company: '"Brown" Home Bakery',
       period: "2020 - Present",
       position: "Founder & Manager",
       details: {

@@ -8,6 +8,7 @@ import RecentProjects from './components/Projects';
 import ProfessionalExperience from './components/ProfessionalExperience';
 import Certifications from './components/Certifications';
 import Hero3 from './components/Hero3';
+import Contact from './components/Contact';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <RecentProjects/>
       <ProfessionalExperience/>
       <Certifications/>
+      <Contact/>
     </>
   )
 }

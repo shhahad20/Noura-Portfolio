@@ -143,20 +143,20 @@
 //   transform: scale(1.2);
 // }
 
-.cert-glow {
-  position: absolute;
-  left: 50%;
-  bottom: -120px;
-  width: 600px;
-  height: 320px;
-  background: radial-gradient(ellipse at center, #00ffe7 0%, #111 80%);
-  filter: blur(80px);
-  opacity: 0.7;
-  transform: translateX(-50%);
-  z-index: 1;
-  pointer-events: none;
-  animation: glowPulse 4s infinite alternate;
-}
+// .cert-glow {
+//   position: absolute;
+//   left: 50%;
+//   bottom: -120px;
+//   width: 600px;
+//   height: 320px;
+//   background: radial-gradient(ellipse at center, #00ffe7 0%, #111 80%);
+//   filter: blur(80px);
+//   opacity: 0.7;
+//   transform: translateX(-50%);
+//   z-index: 1;
+//   pointer-events: none;
+//   animation: glowPulse 4s infinite alternate;
+// }
 
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-40px); }

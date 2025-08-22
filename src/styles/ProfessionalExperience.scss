@@ -1,3 +1,4 @@
+@import 'mixins';
 .professional-experience {
   padding: 4rem 2rem;
   max-width: 1000px;
@@ -5,11 +6,17 @@
   color: #ffffff;
 
   h2 {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 500;
-    margin-bottom: 3rem;
-    position: relative;
+    @include header-style(3rem);
+    // font-size: 2rem;
+    // font-weight: 600;
+    // color: #fffaf6;
+    // text-shadow: 0 0 20px rgba(238, 200, 175, 0.1),
+    //   0 0 20px rgba(238, 200, 175, 0.2), 0 0 10px rgba(238, 200, 175, 0.2);
+    // text-align: center;
+    // font-size: 3rem;
+    // font-weight: 500;
+    // margin-bottom: 3rem;
+    // position: relative;
 
     // &:after {
     //   content: '';

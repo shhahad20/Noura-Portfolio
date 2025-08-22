@@ -1,4 +1,5 @@
-// Variables
+@import 'mixins';
+
 $bg-black: #000000;
 $text-white: #ffffff;
 $text-gray: #d1d5db;
@@ -36,11 +37,13 @@ $gradient-end: #eab308;
   }
 
   &__title {
-    font-size: 3rem;
-    font-weight: 500;
-    text-align: center;
+        @include header-style(3rem);
+
+    // font-size: 3rem;
+    // font-weight: 500;
+    // text-align: center;
     margin-bottom: 5rem;
-    color: $text-white;
+    // color: $text-white;
 
     @media (min-width: 768px) {
       font-size: 3rem;

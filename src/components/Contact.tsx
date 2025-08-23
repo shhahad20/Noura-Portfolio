@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
 				Get In Touch
 			</motion.h2>
 			<motion.p className="contact-desc" variants={itemVariants} custom={1}>
-				I’m always open to new opportunities, collaborations, or just a friendly chat.<br />
+				I'm always open to new opportunities, collaborations, or just a friendly chat.<br />
 				Feel free to reach out via the form below or connect with me on social media!
 			</motion.p>
 			<motion.form

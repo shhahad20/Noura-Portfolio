@@ -9,6 +9,7 @@ import ProfessionalExperience from './components/ProfessionalExperience';
 import Certifications from './components/Certifications';
 import Hero3 from './components/Hero3';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <ProfessionalExperience/>
       <Certifications/>
       <Contact/>
+      <Footer/>
     </>
   )
 }

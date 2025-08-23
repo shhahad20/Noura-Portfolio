@@ -86,11 +86,11 @@
 }
 
 .contact-btn {
-//   background: linear-gradient(90deg, #eec8af 0%, #fffaf6 100%);
+  //   background: linear-gradient(90deg, #eec8af 0%, #fffaf6 100%);
   background-color: #171717;
 
   // color: #18120e;
-  
+
   font-weight: 500;
   font-size: 0.87rem;
   border: none;
@@ -101,11 +101,11 @@
   font-family: "Inter", sans-serif;
 
   //   box-shadow: 0 2px 16px #eec8af33;
-//   transition: background 0.2s, transform 0.2s;
+  //   transition: background 0.2s, transform 0.2s;
 }
 .contact-btn:hover {
-background-color: #e7dfd6;
-color: #171717;
+  background-color: #e7dfd6;
+  color: #171717;
 }
 
 .contact-glow {
@@ -139,5 +139,32 @@ color: #171717;
   }
   .contact-title {
     font-size: 1.3rem;
+  }
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0;
+  // margin-top: 3rem;
+  // margin-bottom: 1rem;
+  // margin: 1rem auto 1rem auto;
+  // margin-bottom: 1rem;
+  h3,
+  p {
+    color: #333;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+  }
+  // p{
+  //   margin-bottom: 1rem;
+  // }
+  @media (max-width: 480px) {
+    h3,
+    p {
+      font-size: 12px;
+    }
   }
 }

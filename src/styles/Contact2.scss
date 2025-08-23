@@ -1,0 +1,153 @@
+@import "mixins";
+
+.contact2-outer {
+  width: 100vw;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0 48px 0;
+  background: none;
+}
+
+.contact2-card {
+  position: relative;
+  background: rgba(10, 10, 10, 0.98);
+  border-radius: 2rem;
+  border: 1px solid #171717;
+  // box-shadow: 0 8px 32px 0 rgba(238,200,175,0.13);
+  min-width: 320px;
+  max-width: 570px;
+  width: 98vw;
+  min-height: 280px;
+  padding: 10px 32px 10px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.contact2-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 420px;
+  height: 220px;
+  background: radial-gradient(
+    ellipse at center,
+    #eec8af 0%,
+    #fffaf6 40%,
+    #18120e 100%
+  );
+  filter: blur(60px);
+  opacity: 0.8;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.contact2-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact2-title {
+  @include header-style(3rem);
+//   font-size: 2rem;
+//   font-weight: 700;
+//   color: #eec8af;
+//   margin-bottom: 32px;
+//   letter-spacing: 1px;
+//   text-align: center;
+}
+
+.contact2-btn {
+  background: linear-gradient(90deg, #eec8af 0%, #fffaf6 100%);
+  color: #18120e;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 36px;
+  margin-bottom: 32px;
+  cursor: pointer;
+  box-shadow: 0 2px 16px #eec8af33;
+  transition: background 0.2s, transform 0.2s;
+}
+.contact2-btn:active {
+  background: linear-gradient(90deg, #fffaf6 0%, #eec8af 100%);
+}
+
+.contact2-socials {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  align-items: center;
+}
+.contact2-social svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #eec8af22;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.contact2-social:hover svg {
+  box-shadow: 0 4px 16px #eec8af66;
+  transform: scale(1.12) rotate(-4deg);
+}
+
+@media (max-width: 600px) {
+  .contact2-card {
+    min-width: 0;
+    max-width: 98vw;
+    padding: 24px 4vw 18px 4vw;
+    border-radius: 1.2rem;
+  }
+  .contact2-title {
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+  }
+  .contact2-btn {
+    font-size: 1rem;
+    padding: 12px 0;
+    width: 100%;
+    border-radius: 9px;
+    margin-bottom: 22px;
+  }
+  .contact2-glow {
+    width: 90vw;
+    height: 100px;
+    filter: blur(32px);
+  }
+  .contact2-socials {
+    gap: 14px;
+  }
+  .contact2-social svg {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact2-card {
+    padding: 10px 2vw 10px 2vw;
+    border-radius: 0.7rem;
+  }
+  .contact2-title {
+    font-size: 1rem;
+  }
+  .contact2-btn {
+    font-size: 0.9rem;
+    border-radius: 7px;
+    padding: 10px 0;
+  }
+}

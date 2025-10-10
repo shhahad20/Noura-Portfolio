@@ -1,4 +1,59 @@
 .hero {
+  height:100vh;
+  margin: 0;
+  --x: calc(var(--posX, 0) * 1px);
+  --y: calc(var(--posY, 0) * 1px);
+  // background-image: 
+  //   linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), 
+  //   radial-gradient( 90% 100% at calc( 50% + var(--x)) calc( 0% + var(--y)), rgb(200 200 200), rgb(022 000 045)), 
+  //   radial-gradient(100% 100% at calc( 80% - var(--x)) calc( 0% - var(--y)), rgb(250 255 000), rgb(036 000 000)), 
+  //   radial-gradient(150% 210% at calc(100% + var(--x)) calc( 0% + var(--y)), rgb(020 175 125), rgb(000 010 255)), 
+  //   radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 077 000), rgb(000 200 255)), 
+  //   linear-gradient(60deg, rgb(255 000 000), rgb(120 086 255));
+  // background-blend-mode: overlay, overlay, difference, difference, difference, normal;
+
+/* same structure as your original, only colors updated */
+
+  background-image:
+    /* warm angled wash (top-most) */
+    linear-gradient(115deg, rgba(249,212,146,0.60), rgba(54,22,20,0.80)),
+
+    /* top-centered warm reflection (moves with --x/--y) */
+    radial-gradient(
+      90% 100% at calc(50% + var(--x)) calc(0% + var(--y)),
+      rgba(255,230,190,0.50),
+      rgba(48,20,20,0.75)
+    ),
+
+    /* orange → burnt transition near top-right */
+    radial-gradient(
+      100% 100% at calc(80% - var(--x)) calc(0% - var(--y)),
+      rgba(225,140,95,0.72),
+      rgba(40,18,18,0.92)
+    ),
+
+    /* wide purple depth wash coming from the right */
+    radial-gradient(
+      150% 210% at calc(100% + var(--x)) calc(0% + var(--y)),
+      rgba(58,29,67,0.56),   /* deep plum */
+      rgba(28,12,40,0.72)    /* near-black purple */
+    ),
+
+    /* golden highlight on the right side */
+    radial-gradient(
+      100% 100% at calc(100% - var(--x)) calc(30% - var(--y)),
+      rgba(255,200,70,0.45),
+      rgba(80,26,90,0.46)    /* muted purple (keeps warm→purple blend) */
+    ),
+
+    /* dark violet base (bottom-most) */
+    linear-gradient(60deg, rgba(60,20,30,0.70), rgba(35,20,60,0.75));
+  
+  /* keep your original blend modes if you prefer the same mixing */
+  background-blend-mode: overlay, overlay, difference, difference, difference, normal;
+
+
+
   width: 100%;
   //   position: relative;
   min-height: 100vh;

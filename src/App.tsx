@@ -11,7 +11,8 @@ import ProfessionalExperience from './components/ProfessionalExperience';
 // import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Contact2 from './components/Contact2';
-import Hero4 from './components/Hero4';
+import Hero from './components/Hero';
+// import Hero4 from './components/Hero4';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
     <>
       <Navbar />
       {/* <Hero /> */}
-      <Hero4/>
+      <Hero/>
       {/* <About/> */}
       <CoreCompetencies/>
       <RecentProjects/>

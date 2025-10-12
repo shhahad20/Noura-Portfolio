@@ -1,14 +1,13 @@
 import React, { useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Send, Sparkles } from "lucide-react";
 
 import "../styles/Hero.scss";
 
-import { useEffect, useRef } from "react";
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLElement | null>(null);
-  // const [selectedStyle, setSelectedStyle] = useState('professional');
   const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
@@ -72,20 +71,6 @@ const Hero: React.FC = () => {
                   Send
                   <Send size={14} />
                 </button>
-                {/* <div className="chatbot__actions">
-            <div className="chatbot__tools">
-              <button className="chatbot__tool-btn">
-                <Paperclip size={16} color="#fffaf6" />
-              </button>
-              <button className="chatbot__tool-btn">
-                <Mic size={16} color="#fffaf6" />
-              </button>
-            </div>
-            <button className="chatbot__send-btn">
-              Send
-              <Send size={14} />
-            </button>
-          </div> */}
               </div>
             </div>
           </div>

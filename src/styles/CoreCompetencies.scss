@@ -1,4 +1,4 @@
-@import 'mixins';
+@import "mixins";
 
 $bg-black: #000000;
 $text-white: #ffffff;
@@ -38,12 +38,12 @@ $gradient-end: #eab308;
   }
 
   &__title {
-        @include header-style(3rem);
-
+    @include header-style(3rem);
+    margin: 0;
     // font-size: 3rem;
     // font-weight: 500;
     // text-align: center;
-    margin-bottom: 5rem;
+    // margin-bottom: 5rem;
     // color: $text-white;
 
     @media (min-width: 768px) {
@@ -69,7 +69,7 @@ $gradient-end: #eab308;
     background-color: $card-bg;
     border: 1px solid $card-border;
     border-radius: 0.75rem;
-    padding: 0.5rem 1rem ;
+    padding: 0.5rem 1rem;
     text-align: center;
     transition: all 0.3s ease;
 
@@ -103,7 +103,7 @@ $gradient-end: #eab308;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     @include flex-center;
-    
+
     // Center the gradient absolutely inside the card
     .core-competencies__gradient {
       position: absolute;

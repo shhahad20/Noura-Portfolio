@@ -24,7 +24,8 @@ $gradient-end: #eab308;
 
 // Main Component
 .core-competencies {
-  min-height: 100vh;
+  min-height: 50vh;
+  background-color: #4ade80;
   // background-color: $bg-black;
   color: $text-white;
   @include flex-center;

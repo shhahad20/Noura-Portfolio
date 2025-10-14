@@ -74,6 +74,7 @@ const Hero: React.FC = () => {
               </div>
             </div>
           </div>
+
         </section>
         <hr />
       </main>

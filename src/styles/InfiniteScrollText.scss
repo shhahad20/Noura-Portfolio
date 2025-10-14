@@ -8,16 +8,14 @@
   justify-content: center;
   flex-direction: column;
   padding: 1rem;
-  border: 1px solid red;
 }
 
 .scroll-container {
   position: relative;
   overflow: hidden;
   // width: 25vw;
-  border: 1px solid blue;
-  min-width: 220px;
-  max-width: 350px;
+  // min-width: 220px;
+  // max-width: 350px;
   min-width: 220px;
   max-width: 800px;
   -webkit-mask-image: linear-gradient(
@@ -108,8 +106,9 @@
   border: 1px solid #333;
   padding: 5px 20px;
   &:hover {
-    transform: scale(1.1);
+    // transform: scale(1.1);
     filter: brightness(1.2);
+    cursor: pointer;
   }
 }
 

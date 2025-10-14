@@ -1,4 +1,98 @@
-.about{
-    height: 100vh;
-    border: 1px solid blue;
+.about {
+  //   height: 100vh;
+
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // align-items: center;
+    width: 1200px;
+    gap: 1rem;
+    margin-top: 3rem;
+    color: #fff8f0;
+    .experience-keywords {
+      width: 600px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      //   padding-left: 3rem;
+      border: 1px solid rgba(255, 230, 190, 0.15);
+      border-radius: 1.5rem;
+
+      .experience-headers {
+        padding: 0 1rem;
+
+        h1 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin: 0;
+          padding: 0;
+        }
+        p {
+          margin: 0;
+          padding: 0;
+          color: #e2c9b9;
+        }
+      }
+
+      .experience-list {
+        // border: 1px solid red;
+        width: 95%;
+        // background-color: #e2c9b9;
+        list-style: disc;
+        .experience-item {
+          //   border: 1px solid white;
+          gap: 0;
+          margin: 0;
+          margin-bottom: 1rem;
+          padding: 0 1rem;
+
+          .experience-item__header {
+            // gap: 2rem;
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            // border: 1px solid blue;
+
+            h3,
+            span {
+              margin: 0;
+              padding: 0;
+            }
+
+            .experience-period {
+              color: #e2c9b9;
+              font-size: 0.9rem;
+            }
+          }
+          .experience-position {
+            margin-top: 0.25rem;
+            font-style: italic;
+            color: #f6e9e0;
+          }
+        }
+      }
+    }
+
+    .about-paragraph {
+      width: 600px;
+      padding: 1.5rem;
+      //   padding-left: 3rem;
+      border: 1px solid rgba(255, 230, 190, 0.15);
+      border-radius: 1.5rem;
+
+      h1{
+          font-size: 1.2rem;
+          font-weight: 600;
+      }
+    }
+  }
 }

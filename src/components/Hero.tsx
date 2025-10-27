@@ -1,100 +1,24 @@
-import React, { useState } from "react";
-import { useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Send, Sparkles } from "lucide-react";
-import Select from "react-select";
-import type { StylesConfig } from "react-select";
-import chroma from "chroma-js";
 
 import "../styles/Hero.scss";
 
-type OptionType = {
-  value: string;
-  label: string;
-  color: string;
-};
 
-const colourOptions: OptionType[] = [
-  { value: "general", label: "General", color: "#e2c79c" },
-  { value: "business", label: "Business", color: "#e2c79c" },
-  { value: "education", label: "Education", color: "#e2c79c" },
-  { value: "technology", label: "Technology", color: "#e2c79c" },
+const options = [
+  { value: "general", label: "General" },
+  { value: "business", label: "Business" },
+  { value: "education", label: "Education" },
+  { value: "technology", label: "Technology" },
 ];
-
-const colourStyles: StylesConfig<OptionType, true> = {
-  control: (styles) => ({
-    ...styles,
-    backgroundColor: "rgba(255, 225, 179, 0.23)",
-    borderRadius: "8px",
-    borderColor: "#af772e",
-    color: "#e2c79c",
-    boxShadow: "none",
-    fontSize: "0.8rem",
-    minWidth: "100px",
-    cursor: "pointer",
-   "&:hover": {
-      borderColor: "#e2c79c",
-    },
-  }),
-  placeholder: (styles) => ({
-    ...styles,
-    color: "#b28c62",
-    fontWeight: 500,
-  }),
-    dropdownIndicator: (styles) => ({
-    ...styles,
-    color: "#b28c62",
-    "&:hover": { color: "#e2c79c" },
-  }),
-  indicatorSeparator: (styles) => ({
-    ...styles,
-    backgroundColor: "#b28c62",
-  }),
-    menu: (styles) => ({
-    ...styles,
-    backgroundColor: "#080602", // darker dropdown
-    border: "0.25px solid #e2c79c",
-    borderRadius: "6px",
-    marginTop: "1px",
-  }),
-option: (styles, { isFocused, isSelected }) => ({
-    ...styles,
-    backgroundColor: isSelected
-      ? "#d4a373"
-      : isFocused
-      ? "rgba(212, 163, 115, 0.15)"
-      : "transparent",
-    color: isSelected ? "#2a2118" : "#e2c79c",
-    cursor: "pointer",
-    fontSize: "0.8rem",
-  }),
-  multiValue: (styles, { data }) => {
-    const color = chroma(data.color);
-    return {
-      ...styles,
-      backgroundColor: color.alpha(0.1).css(),
-      borderRadius: "4px",
-      padding: "2px 2px",
-    };
-  },
-  multiValueLabel: (styles, { data }) => ({
-    ...styles,
-    color: data.color,
-  }),
-  multiValueRemove: (styles, { data }) => ({
-    ...styles,
-    color: "#d4a373",
-    ":hover": {
-      backgroundColor: data.color,
-      color: "#af772e",
-    },
-  }),
-};
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLElement | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const [inputValue, setInputValue] = useState("");
-  const [selectedOptions, setSelectedOptions] = useState<OptionType[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<string[]>([]);
 
   useEffect(() => {
     const el = heroRef.current;
@@ -115,10 +39,31 @@ const Hero: React.FC = () => {
       el.removeEventListener("pointermove", handlePointerMove);
     };
   }, []);
+ 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Select / deselect options
+  const toggleSelect = (value: string) => {
+    setSelected((prev) =>
+      prev.includes(value)
+        ? prev.filter((v) => v !== value)
+        : [...prev, value]
+    );
+    setIsOpen(false); // closes dropdown when selecting an option
+  };
 
   const handleSend = () => {
     console.log("Message:", inputValue);
-    console.log("Categories:", selectedOptions);
+    console.log("Selected Sections:", selected);
   };
 
   return (
@@ -159,17 +104,36 @@ const Hero: React.FC = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                 />
 
-                <Select
-                  closeMenuOnSelect={false}
-                  isMulti
-                  options={colourOptions}
-                  styles={colourStyles}
-                  placeholder="Select topics..."
-                  value={selectedOptions}
-                  onChange={(selected) =>
-                    setSelectedOptions(selected as OptionType[])
-                  }
-                />
+{/* Custom Select */}
+                <div className="custom-select" ref={dropdownRef}>
+                  <button
+                    className="select-btn"
+                    onClick={() => setIsOpen(!isOpen)}
+                  >
+                    {selected.length > 0
+                      ? selected.map(
+                          (val) => options.find((o) => o.value === val)?.label
+                        ).join(", ")
+                      : "Select Topics"}
+                    <span className="arrow">{isOpen ? "▲" : "▼"}</span>
+                  </button>
+
+                  {isOpen && (
+                    <ul className="dropdown-menu">
+                      {options.map((opt) => (
+                        <li
+                          key={opt.value}
+                          className={`option ${
+                            selected.includes(opt.value) ? "selected" : ""
+                          }`}
+                          onClick={() => toggleSelect(opt.value)}
+                        >
+                          {opt.label}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
 
                 <button className="chatbot__send-btn" onClick={handleSend}>
                   Send

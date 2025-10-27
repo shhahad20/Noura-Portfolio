@@ -124,59 +124,7 @@ const About: React.FC = () => {
           </p>
         </div>
       </div>
-                <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="glow" cx="50%" cy="50%" r="80%">
-                <stop offset="0%" stop-color="#fff" stop-opacity="1" />
-                <stop offset="50%" stop-color="#ff4f87" stop-opacity="0.6" />
-                <stop offset="100%" stop-color="#2b001f" stop-opacity="0" />
-              </radialGradient>
-              <linearGradient
-                id="pageGradient"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop offset="0%" stop-color="#ffb6c1" />
-                <stop offset="100%" stop-color="#ff4f87" />
-              </linearGradient>
-            </defs>
-
-            <rect width="100%" height="100%" fill="url(#glow)" />
-
-            <path
-              d="M100,300 C150,250 450,250 500,300 Q300,350 100,300 Z"
-              fill="url(#pageGradient)"
-              stroke="#fff"
-              stroke-width="2"
-              opacity="0.8"
-            />
-
-            <path
-              d="M300,250 Q320,180 400,200 Q420,260 380,280 Q340,290 300,250 Z"
-              fill="url(#pageGradient)"
-              stroke="#fff"
-              stroke-width="1.5"
-              opacity="0.9"
-            />
-
-            <path
-              d="M320,180 Q360,190 400,200"
-              stroke="#ffffff"
-              stroke-width="1"
-              opacity="0.5"
-              fill="none"
-            />
-
-            <path
-              d="M300,250 Q340,290 380,280"
-              stroke="#000"
-              stroke-width="2"
-              opacity="0.2"
-              fill="none"
-            />
-          </svg>
+      
     </section>
   );
 };

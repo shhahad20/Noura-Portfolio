@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Send, Sparkles } from "lucide-react";
+import { Send, Sparkles, ChevronDown } from "lucide-react";
 
 import "../styles/Hero.scss";
 
@@ -109,13 +109,15 @@ const Hero: React.FC = () => {
                   <button
                     className="select-btn"
                     onClick={() => setIsOpen(!isOpen)}
+                    aria-haspopup="listbox"
+                    aria-expanded={isOpen}
                   >
                     {selected.length > 0
-                      ? selected.map(
-                          (val) => options.find((o) => o.value === val)?.label
-                        ).join(", ")
+                      ? selected
+                          .map((val) => options.find((o) => o.value === val)?.label)
+                          .join(", ")
                       : "Select Topics"}
-                    <span className="arrow">{isOpen ? "▲" : "▼"}</span>
+                    <ChevronDown className={`arrow ${isOpen ? "open" : ""}`} size={14} />
                   </button>
 
                   {isOpen && (

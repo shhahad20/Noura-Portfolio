@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import Contact2 from "./components/Contact2";
 import Hero from "./components/Hero";
 import InfiniteScrollText from "./components/InfiniteScrollText";
+import ScrollPetal from "./components/About2";
 // import Hero4 from './components/Hero4';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       {/* <Hero /> */}
       <Hero />
       <About/>
+      <ScrollPetal/>
       <RecentProjects />
       <InfiniteScrollText/>
       {/* <CoreCompetencies /> */}

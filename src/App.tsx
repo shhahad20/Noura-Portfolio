@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import About from './components/About';
 // import CoreCompetencies from "./components/Core";
 import RecentProjects from "./components/Projects";
-import ProfessionalExperience from "./components/ProfessionalExperience";
+// import ProfessionalExperience from "./components/ProfessionalExperience";
 // import Certifications from './components/Certifications';
 // import Hero3 from './components/Hero3';
 // import Contact from './components/Contact';
@@ -27,7 +27,7 @@ function App() {
       <RecentProjects />
       <InfiniteScrollText/>
       {/* <CoreCompetencies /> */}
-      <ProfessionalExperience />
+      {/* <ProfessionalExperience /> */}
       {/* <Certifications/> */}
       {/* <Contact/> */}
       <Contact2 />

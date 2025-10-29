@@ -201,7 +201,7 @@
     text-align: center;
     gap: 0.75rem;
     margin-bottom: 0.5rem;
-    width: 30%;
+    width: 25%;
     background-color: #ffe0b3;
     border: 1px solid #af772e;
     border-radius: 50rem;
@@ -215,6 +215,9 @@
     font-weight: 600;
     text-shadow: 0 0 20px rgba(238, 200, 175, 0.1),
       0 0 20px rgba(238, 200, 175, 0.2), 0 0 10px rgba(238, 200, 175, 0.2);
+  }
+  .ai-icon {
+    width: 15px;
   }
   .chatbot__input-row {
     display: flex;
@@ -273,13 +276,13 @@
       border: 0.25px solid #af772e;
       color: #918168;
       border-radius: 8px;
-      // padding: 2px 6px;
-      font-size: 0.875rem;
+      padding: 2px 6px;
+      font-size: 0.78rem;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      // gap: 0.5rem;
       min-height: 2.3rem;
       text-align: center;
       cursor: pointer;
@@ -293,10 +296,11 @@
     }
 
     .arrow {
-      margin-left: 8px;
+      // margin-left: 3px;
       display: inline-block;
       line-height: 0; /* keeps svg vertical alignment tight */
       transition: transform 200ms ease;
+      width: 14px;
       /* color handled by stroke of svg from lucide-react */
     }
     .arrow.open {
@@ -327,7 +331,7 @@
         padding: 5px 3px;
         color: #ffe0b3;
         cursor: pointer;
-        font-size: 0.8rem;
+      font-size: 0.78rem;
         transition: background 0.2s;
 
         &:hover {
@@ -359,6 +363,7 @@
     border-radius: 8px;
     font-weight: 500;
     font-size: 0.875rem;
+    padding: 2px 6px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -484,19 +489,18 @@
     }
     .custom-select {
       width: 20%;
-      
-      .select-btn{
+
+      .select-btn {
         font-size: 0.6rem;
         min-height: 1.5rem;
         border-radius: 6px;
         gap: 0;
-        
       }
-      .arrow{
+      .arrow {
         margin-left: 3px;
       }
-      .dropdown-menu{
-        li{
+      .dropdown-menu {
+        li {
           font-size: 0.6rem;
         }
       }
@@ -507,7 +511,6 @@
       padding-bottom: 0;
       font-size: 0.6rem;
       text-align: center;
-
     }
 
     .chatbot__send-btn {

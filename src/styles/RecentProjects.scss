@@ -80,7 +80,8 @@ $status-live: linear-gradient(
   min-height: 100vh;
   background: $bg-dark;
   color: $text-primary;
-  padding: 6rem 2rem;
+  padding: 0rem 2rem;
+  margin-top: -20rem;
   overflow: hidden;
 
   &__container {
@@ -712,7 +713,8 @@ $status-live: linear-gradient(
 // Responsive Design
 @media (max-width: 768px) {
   .recent-projects {
-    padding: 4rem 1rem;
+    // padding: 0rem 1rem;
+  margin-top: -30rem;
 
     &__grid {
       grid-template-columns: 1fr;

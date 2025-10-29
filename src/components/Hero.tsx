@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Send, Sparkles, ChevronDown } from "lucide-react";
+import { Send, ChevronDown,WandSparkles  } from "lucide-react";
 
 import "../styles/Hero.scss";
 
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
             <div className="chatbot--professional">
               <div className="chatbot__header">
                 <span className="chatbot__title">Quick Access Using AI</span>
-                <Sparkles size={18} color="#af772e" />
+                <WandSparkles className="ai-icon"  color="#af772e" />
               </div>
               <div className="ai-input">
                 <textarea
@@ -117,7 +117,7 @@ const Hero: React.FC = () => {
                           .map((val) => options.find((o) => o.value === val)?.label)
                           .join(", ")
                       : "Select Topics"}
-                    <ChevronDown className={`arrow ${isOpen ? "open" : ""}`} size={14} />
+                    <ChevronDown className={`arrow ${isOpen ? "open" : ""}`}  />
                   </button>
 
                   {isOpen && (

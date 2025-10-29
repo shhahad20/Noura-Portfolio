@@ -56,7 +56,8 @@ const ScrollPetal: React.FC = () => {
         const start = i * baseSegment;
         const end = Math.min(1, start + petalSpan);
 
-        let localProgress = (totalProgress - start) / Math.max(1e-6, end - start);
+        let localProgress =
+          (totalProgress - start) / Math.max(1e-6, end - start);
         localProgress = Math.max(0, Math.min(1, localProgress));
 
         // You can apply easing here if you want non-linear draw:
@@ -67,7 +68,7 @@ const ScrollPetal: React.FC = () => {
       });
 
       // Cross-fade texts — use textsCount so each text has its own center
-      const fadeRange = Math.max(0.18, 1 / textsCount * 1.2); // wider visibility
+      const fadeRange = Math.max(0.18, (1 / textsCount) * 1.2); // wider visibility
       const halfFade = fadeRange / 2;
 
       textRefs.current.forEach((txt, i) => {
@@ -77,7 +78,9 @@ const ScrollPetal: React.FC = () => {
         const opacity = Math.max(0, 1 - dist / halfFade);
         txt.style.opacity = `${opacity}`;
         const scale = 0.95 + 0.05 * opacity;
-        txt.style.transform = `translateY(${(1 - opacity) * 6}px) scale(${scale})`;
+        txt.style.transform = `translateY(${
+          (1 - opacity) * 6
+        }px) scale(${scale})`;
       });
     };
 
@@ -105,12 +108,12 @@ const ScrollPetal: React.FC = () => {
       {/* keep your inline CSS as before or move to SCSS file — unchanged */}
       <style>{`
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-        .spacer { height: 50vh; }
-        .content-section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
-        .content-section h2 { font-size: 48px; font-weight: 300; margin-bottom: 20px; letter-spacing: -0.02em; }
+        body { background: #0a0a0a; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        // .spacer { height: 50vh; }
+        // .content-section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
+        // .content-section h2 { font-size: 48px; font-weight: 300; margin-bottom: 20px; letter-spacing: -0.02em; }
         .content-section p { font-size: 18px; line-height: 1.6; color: #999; max-width: 600px; }
-        .svg-container { position: relative; width: 100%; height: 400vh; margin: 100px 0; }
+        .svg-container { position: relative; width: 100%; height: 400vh; margin: 0px 0; }
         .svg-wrapper { position: sticky; top: 50%; transform: translateY(-50%); width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 60px; }
         svg { width: 40%; max-width: 400px; height: auto; display: block; }
         .draw-line { stroke: #fff; stroke-width: 3; fill: none; stroke-linejoin: round; stroke-linecap: round; }
@@ -118,20 +121,20 @@ const ScrollPetal: React.FC = () => {
         .petal-text { position: absolute; font-size: 20px; font-weight: 300; letter-spacing: -0.02em; text-align: center; opacity: 0; transition: opacity 260ms linear, transform 260ms linear; will-change: opacity, transform; pointer-events: none; color: #fff; }
         .petal-text .prof-name { margin: 6px 0 0; font-size: 14px; color: #cfcfcf; }
         .petal-text .prod-date { margin: 2px 0 0; font-size: 13px; color: #a9a9a9; }
-        @media (max-width: 768px) {
-          .content-section h2 { font-size: 32px; }
-          .content-section p { font-size: 16px; }
-          svg { width: 60%; }
-          .petal-text { font-size: 16px; }
-        }
+        // @media (max-width: 768px) {
+        //   .content-section h2 { font-size: 32px; }
+        //   .content-section p { font-size: 16px; }
+        //   svg { width: 60%; }
+        //   .petal-text { font-size: 16px; }
+        // }
       `}</style>
 
       <div className="spacer" />
 
-      <div className="content-section">
+      {/* <div className="content-section">
         <h2>What I’ve Been Working On</h2>
         <p>Professional Experience</p>
-      </div>
+      </div> */}
 
       <div className="svg-container" ref={containerRef}>
         <div className="svg-wrapper" aria-hidden={false}>
@@ -232,15 +235,15 @@ const ScrollPetal: React.FC = () => {
         </div>
       </div>
 
-      <div className="content-section">
+      {/* <div className="content-section">
         <h2>Shape Complete</h2>
         <p>
           The entire shape has been drawn. Each petal revealed its message as it
           was being traced.
         </p>
-      </div>
+      </div> */}
 
-      <div className="spacer" />
+      {/* <div className="spacer" /> */}
     </div>
   );
 };

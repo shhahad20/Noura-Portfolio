@@ -22,16 +22,21 @@ const About: React.FC = () => {
         <div className="about-paragraph">
           <div className="absolute top-8 right-8 opacity-20"></div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-            doloremque laudantium nihil reiciendis quia! Atque sapiente eveniet
-            in harum doloribus sit ut hic. Numquam quo ab atque modi tempora
-            nemo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-            doloremque laudantium nihil reiciendis quia! Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Omnis doloremque laudantium nihil
-            reiciendis quia! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Omnis doloremque laudantium nihil reiciendis quia! Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Omnis doloremque
-            laudantium nihil reiciendis quia!
+            Holds a Master’s degree in Executive Business Administration with
+            First-Class Honors (Excellent). A part-time faculty member at the
+            Saudi Electronic University. A graduate of the Apple Developer
+            Academy. I have developed five applications in collaboration with my
+            team, and I am currently managing two teams working on two different
+            applications — one specializing in real estate technology and the
+            other in food technology using artificial intelligence, which was
+            selected as an innovative application.<br /><br />I also managed a home-based
+            bakery project that served more than 10 cafés in Hail. I worked as
+            an English language instructor at Elaf Institute for diploma
+            students and authored an English learning book that is still in use
+            at the institution.<br /><br />I represented the Apple Academy at the 2023 LEAP
+            Conference and participated in the 2024 LEAP Conference as one of
+            the exhibitors for the LAN application project in the field of real
+            estate technology.
           </p>
         </div>
 

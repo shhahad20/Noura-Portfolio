@@ -8,9 +8,9 @@ import RecentProjects from "./components/Projects";
 // import ProfessionalExperience from "./components/ProfessionalExperience";
 // import Certifications from './components/Certifications';
 // import Hero3 from './components/Hero3';
-// import Contact from './components/Contact';
-import Footer from "./components/Footer";
-import Contact2 from "./components/Contact2";
+import Contact from './components/Contact';
+// import Footer from "./components/Footer";
+// import Contact2 from "./components/Contact2";
 import Hero from "./components/Hero";
 import InfiniteScrollText from "./components/InfiniteScrollText";
 import ScrollPetal from "./components/About2";
@@ -29,9 +29,9 @@ function App() {
       {/* <CoreCompetencies /> */}
       {/* <ProfessionalExperience /> */}
       {/* <Certifications/> */}
-      {/* <Contact/> */}
-      <Contact2 />
-      <Footer />
+      <Contact/>
+      {/* <Contact2 /> */}
+      {/* <Footer /> */}
     </>
   );
 }

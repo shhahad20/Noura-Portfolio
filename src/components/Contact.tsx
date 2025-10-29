@@ -1,59 +1,67 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { easeInOut } from "framer-motion";
+// import { easeInOut } from "framer-motion";
 import "../styles/Contact.scss";
+import Footer from "./Footer";
 
-const containerVariants = {
-	hidden: { opacity: 0, y: 60 },
-	visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeInOut } },
-};
-const itemVariants = {
-	hidden: { opacity: 0, y: 40 },
-	visible: (i: number) => ({
-		opacity: 1,
-		y: 0,
-		transition: { delay: 0.2 + i * 0.15, duration: 0.7, ease: easeInOut },
-	}),
-};
+// const containerVariants = {
+// 	hidden: { opacity: 0, y: 60 },
+// 	visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeInOut } },
+// };
+// const itemVariants = {
+// 	hidden: { opacity: 0, y: 40 },
+// 	visible: (i: number) => ({
+// 		opacity: 1,
+// 		y: 0,
+// 		transition: { delay: 0.2 + i * 0.15, duration: 0.7, ease: easeInOut },
+// 	}),
+// };
 
 const Contact: React.FC = () => {
-	return (
-		<motion.section
-			className="contact-section"
-			initial="hidden"
-			whileInView="visible"
-			viewport={{ once: true, amount: 0.3 }}
-			variants={containerVariants}
-		>
-			<motion.h2 className="contact-title" variants={itemVariants} custom={0}>
-				Get In Touch
-			</motion.h2>
-			<motion.p className="contact-desc" variants={itemVariants} custom={1}>
-				I'm always open to new opportunities, collaborations, or just a friendly chat.<br />
-				Feel free to reach out via the form below or connect with me on social media!
-			</motion.p>
-			<motion.form
-				className="contact-form"
-				variants={itemVariants}
-				custom={2}
-				onSubmit={e => e.preventDefault()}
-				autoComplete="off"
-			>
-				<div className="form-row">
-					<input type="text" name="name" placeholder="Your Name" required />
-					<input type="email" name="email" placeholder="Your Email" required />
-				</div>
-				<textarea name="message" placeholder="Your Message" required rows={4} />
-				<motion.button
-					type="submit"
-					className="contact-btn"
-				>
-					Send Message
-				</motion.button>
-			</motion.form>
-			<motion.div className="contact-glow" initial={{ opacity: 0 }} animate={{ opacity: 0.7 }} transition={{ duration: 1.2, delay: 0.5 }} />
-		</motion.section>
-	);
+  const contactRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const el = contactRef.current;
+    if (!el) return;
+    const handlePointerMove = (e: PointerEvent) => {
+      const { clientX: x, clientY: y } = e;
+      const {
+        top: t,
+        left: l,
+        width: w,
+        height: h,
+      } = el.getBoundingClientRect();
+      el.style.setProperty("--posX", String(x - l - w / 2));
+      el.style.setProperty("--posY", String(y - t - h / 2));
+    };
+    el.addEventListener("pointermove", handlePointerMove);
+    return () => {
+      el.removeEventListener("pointermove", handlePointerMove);
+    };
+  }, []);
+
+  return (
+    <section className="contact-section" ref={contactRef}>
+      <main className="contact__frame">
+        <motion.div
+          className="contact__content"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
+        >
+          <h1 className="contact__title">Want to make a difference? So do I</h1>
+          <h2 className="contact__greeting">
+            Let’s connect to share ideas, discuss partnerships, or collaborate
+            on future projects in tech, education, or business development.
+          </h2>
+
+          <button className="contact__cta" aria-label="Get in touch">Get In Touch</button>
+
+        </motion.div>
+		<Footer/>
+      </main>
+    </section>
+  );
 };
 
 export default Contact;

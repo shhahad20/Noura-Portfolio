@@ -331,7 +331,7 @@
         padding: 5px 3px;
         color: #ffe0b3;
         cursor: pointer;
-      font-size: 0.78rem;
+        font-size: 0.78rem;
         transition: background 0.2s;
 
         &:hover {
@@ -414,7 +414,9 @@
       line-height: 3.5rem;
       margin-bottom: 0;
     }
-
+    .chatbot__header {
+      width: 30%;
+    }
     // .chatbot-wrapper {
     //   padding: 0 0.5rem;
     // }
@@ -489,7 +491,7 @@
     }
     .custom-select {
       width: 20%;
- 
+
       .select-btn {
         font-size: 0.6rem;
         min-height: 1.5rem;

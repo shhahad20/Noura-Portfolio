@@ -1,3 +1,5 @@
+@import "mixins";
+
 .about {
   //   height: 100vh;
 
@@ -6,6 +8,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+
+
+  .about__title{
+    @include header-style(3rem);
+    line-height: normal;
+  }
   .about-container {
   display: flex;
   flex-direction: row;
@@ -150,13 +159,20 @@
 
 @media (max-width: 480px) {
   .about {
+      .about__title{
+    @include header-style(2.5rem);
+    line-height: normal;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
     margin-top: 2.5rem;
     .about-container {
       padding: 0 0.5rem;
 
       .about-paragraph {
-        padding: 1rem;
-        p { font-size: 0.876rem; }
+        padding: 0rem;
+        p { font-size: 1.2rem; }
       }
     }
   }

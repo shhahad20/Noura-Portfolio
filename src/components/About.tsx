@@ -15,7 +15,7 @@ const About: React.FC = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <h2 className="recent-projects__title">Where It All Began</h2>
+        <h2 className="about__title">Where It All Began</h2>
       </motion.div>
 
       <div className="about-container">

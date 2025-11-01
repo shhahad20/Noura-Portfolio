@@ -1,4 +1,4 @@
-import "../styles/contact.scss";
+import "../styles/Contact.scss";
 
 const Footer: React.FC = () => {
   return (

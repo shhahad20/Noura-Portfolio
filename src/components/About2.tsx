@@ -5,7 +5,7 @@ const ScrollPetal: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const petalRefs = useRef<Array<SVGPathElement | null>>([]);
   const textRefs = useRef<Array<HTMLDivElement | null>>([]);
-
+ 
   // store lengths in a ref so changes don't retrigger renders
   const petalLengthsRef = useRef<number[]>([]);
 
@@ -112,7 +112,7 @@ const ScrollPetal: React.FC = () => {
         // .spacer { height: 50vh; }
         // .content-section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
         // .content-section h2 { font-size: 48px; font-weight: 300; margin-bottom: 20px; letter-spacing: -0.02em; }
-        .content-section p { font-size: 18px; line-height: 1.6; color: #999; max-width: 600px; }
+        .content-section p { font-size: 18px; line-height: 1.6;  max-width: 600px; }
         .svg-container { position: relative; width: 100%; height: 400vh; margin: 0px 0; }
         .svg-wrapper { position: sticky; top: 50%; transform: translateY(-50%); width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 60px; }
         svg { width: 40%; max-width: 400px; height: auto; display: block; }

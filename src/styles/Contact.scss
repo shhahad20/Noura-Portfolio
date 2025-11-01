@@ -135,10 +135,11 @@
 
       // Mobile size
       @media (max-width: 480px) {
-        font-size: 2.5rem;
+        font-size: 2.1rem;
+        line-height: normal;
         margin-bottom: 14px;
-        letter-spacing: 0.5px;
-        line-height: 3rem;
+        // letter-spacing: 0.5px;
+        // line-height: 3rem;
       }
       // Small mobile
       @media (max-width: 360px) {
@@ -153,7 +154,7 @@
 
       // Mobile size
       @media (max-width: 480px) {
-        // font-size: 2rem;
+        // font-size: 1.2rem;
         // margin-bottom: 14px;
         // letter-spacing: 0.5px;
       }
@@ -220,7 +221,9 @@
     }
     .contact__content {
       .contact__greeting {
-        width: 70%;
+        width: 100%;
+        font-size: 1rem;
+        padding: 0 1.2rem;
       }
     }
   }

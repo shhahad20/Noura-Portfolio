@@ -72,8 +72,10 @@
       flex-direction: column;
       position: absolute;
       top: 60px;
-      left: 0;
-      width: 100vw;
+    left: 0;
+    /* prefer 100% to avoid adding viewport-width which can create
+      horizontal scroll when scrollbars are present */
+    width: 100%;
       // background: rgba(10, 10, 20, 0.97);
       background-color: #0a0a0a;
       padding: 2rem 0 1rem 0;

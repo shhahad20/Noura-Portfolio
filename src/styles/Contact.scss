@@ -8,54 +8,22 @@
   padding: 0;
   --x: calc(var(--posX, 0) * 1px);
   --y: calc(var(--posY, 0) * 1px);
-  // background-image:
-  //   /* warm angled wash (top-most) */ linear-gradient(
-  //     115deg,
-  //     rgba(249, 212, 146, 0.6),
-  //     rgba(54, 22, 20, 0.8)
-  //   ),
-  //   /* top-centered warm reflection (moves with --x/--y) */
-  //     radial-gradient(
-  //       90% 100% at calc(50% + var(--x)) calc(0% + var(--y)),
-  //       rgba(255, 230, 190, 0.5),
-  //       rgba(48, 20, 20, 0.75)
-  //     ),
-  //   /* orange → burnt transition near top-right */
-  //     radial-gradient(
-  //       100% 100% at calc(80% - var(--x)) calc(0% - var(--y)),
-  //       rgba(225, 140, 95, 0.72),
-  //       rgba(40, 18, 18, 0.92)
-  //     ),
-  //   /* wide purple depth wash coming from the right */
-  //     radial-gradient(
-  //       150% 210% at calc(100% + var(--x)) calc(0% + var(--y)),
-  //       rgba(58, 29, 67, 0.56),
-  //       /* deep plum */ rgba(28, 12, 40, 0.72) /* near-black purple */
-  //     ),
-  //   /* golden highlight on the right side */
-  //     radial-gradient(
-  //       100% 100% at calc(100% - var(--x)) calc(30% - var(--y)),
-  //       rgba(255, 200, 70, 0.45),
-  //       rgba(80, 26, 90, 0.46) /* muted purple (keeps warm→purple blend) */
-  //     ),
-  //   /* dark violet base (bottom-most) */
-  //     linear-gradient(60deg, rgba(60, 20, 30, 0.7), rgba(35, 20, 60, 0.75));
-
-  // /* keep your original blend modes if you prefer the same mixing */
-  // background-blend-mode: overlay, overlay, difference, difference, difference,
-  //   normal;
 
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* allow the blurred pseudo-element to bleed outside the section
-    so the edges appear to glow / 'blind' into the page background */
-  overflow: visible;
-  /* tuning variables: how far the blur spreads beyond edges, and blur amount */
-  --contact-spread: 0rem;
-  --contact-blur: 10px;
+  /* allow the blurred pseudo-element to visually bleed but prevent a
+     horizontal scrollbar caused by the pseudo-element extending past the
+     viewport width. Keep vertical overflow visible for the glow. */
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* tuning variables: how far the blur spreads beyond edges, and blur amount
+    Default is larger for wide screens; reduced in media queries to avoid
+    horizontal overflow on narrower viewports. */
+  --contact-spread: 3rem;
+  --contact-blur: 18px;
   color: white;
 
   /* Move the visual background into a blurred pseudo-element so the
@@ -115,12 +83,24 @@
   @media (max-width: 768px) {
     padding: 48px 12px 36px 12px;
     min-height: 60vh;
+    /* reduce the glow spread at narrower sizes to avoid horizontal overflow */
+    --contact-spread: 1rem;
+    --contact-blur: 12px;
   }
 
   // Mobile adjustments
   @media (max-width: 480px) {
     padding: 32px 8px 24px 8px;
     min-height: 50vh;
+    /* on very small screens remove the outward spread entirely */
+    --contact-spread: 0rem;
+    --contact-blur: 8px;
+  }
+
+  /* medium breakpoint (for 1024 width testing) */
+  @media (max-width: 1024px) {
+    --contact-spread: 1.5rem;
+    --contact-blur: 12px;
   }
 }
 .contact__frame {
@@ -240,7 +220,6 @@
     .contact__content{
     .contact__greeting{
       width: 70%;
-
     }
     }
 
@@ -307,6 +286,7 @@ footer {
   h3,
   p {
     color: #333;
+    color: #f3f3f3;
     font-weight: 400;
     font-size: 14px;
     margin: 0;

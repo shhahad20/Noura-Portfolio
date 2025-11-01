@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import "../styles/Hero2.scss";
 import InfiniteScrollText from "./InfiniteScrollText";
@@ -14,7 +14,7 @@ const Hero2: React.FC = () => {
     animationId?: number;
   }>({});
 
-  const [isLoaded, setIsLoaded] = useState(false);
+  // const [isLoaded, setIsLoaded] = useState(false);
 
   // Default params (kept from your code)
   const params = {
@@ -464,7 +464,7 @@ const Hero2: React.FC = () => {
       sceneRef.current!.animationId = requestAnimationFrame(animate);
     };
     animate();
-    setIsLoaded(true);
+    // setIsLoaded(true);
 
     // Window resize
     const onResize = () => {

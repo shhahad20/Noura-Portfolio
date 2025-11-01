@@ -5,7 +5,7 @@ import '../styles/RecentProjects.scss';
 const RecentProjects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [hoveredProject, setHoveredProject] = useState(null);
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   // Sample project data - replace with your actual projects
   const projects = [
@@ -61,7 +61,7 @@ const RecentProjects = () => {
     }
   ];
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: string | undefined): string => {
     switch(status) {
       case "Featured": return "featured";
       case "New": return "new";

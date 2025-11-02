@@ -490,16 +490,32 @@
       padding: 3px 0;
     }
     .custom-select {
-      width: 20%;
-
+      // width: 20%;
+      display: flex;
+      justify-content: right;
+      min-width: 0px;
       .select-btn {
-        font-size: 0.6rem;
+        // font-size: 0.6rem;
         min-height: 1.5rem;
-        border-radius: 6px;
-        gap: 0;
+        // border-radius: 6px;
+        // gap: 0;
+        font-size: 0; // hide text but keep button size
+      position: relative;
+      width: 30px;
       }
+       .select-btn::before {
+      content: "+"; // show plus sign
+      font-size: 1rem;
+      color: #918168;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      // padding-right: 20px;
+      transform: translate(-50%, -50%);
+    }
       .arrow {
-        margin-left: 3px;
+        // margin-left: 3px;
+        display: none;
       }
       .dropdown-menu {
         li {
@@ -512,13 +528,26 @@
       padding: 0.4rem 0.5rem;
       padding-bottom: 0;
       font-size: 0.6rem;
-      text-align: center;
+      text-align: left;
+      padding-left: 10px;
     }
 
     .chatbot__send-btn {
-      font-size: 0.7rem;
+      // font-size: 0.7rem;
       // padding: 0.625rem 0.875rem;
       min-height: 1.5rem;
+      font-size: 0; // hide text
+      // padding: 6px;
+      min-width: 2rem; // keeps size consistent
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+    .chatbot__send-btn svg {
+      width: 14px;
+      height: 14px;
+      padding-left: 0;
     }
   }
 }

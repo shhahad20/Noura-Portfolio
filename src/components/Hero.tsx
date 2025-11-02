@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Send, ChevronDown,WandSparkles  } from "lucide-react";
+import { Send, ChevronDown, WandSparkles } from "lucide-react";
 
 import "../styles/Hero.scss";
-
 
 const options = [
   { value: "general", label: "General" },
@@ -39,11 +38,14 @@ const Hero: React.FC = () => {
       el.removeEventListener("pointermove", handlePointerMove);
     };
   }, []);
- 
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -54,9 +56,7 @@ const Hero: React.FC = () => {
   // Select / deselect options
   const toggleSelect = (value: string) => {
     setSelected((prev) =>
-      prev.includes(value)
-        ? prev.filter((v) => v !== value)
-        : [...prev, value]
+      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
     );
     setIsOpen(false); // closes dropdown when selecting an option
   };
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
             <div className="chatbot--professional">
               <div className="chatbot__header">
                 <span className="chatbot__title">Quick Access Using AI</span>
-                <WandSparkles className="ai-icon"  color="#af772e" />
+                <WandSparkles className="ai-icon" color="#af772e" />
               </div>
               <div className="ai-input">
                 <textarea
@@ -104,7 +104,8 @@ const Hero: React.FC = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                 />
 
-{/* Custom Select */}
+                {/* Custom Select */}
+
                 <div className="custom-select" ref={dropdownRef}>
                   <button
                     className="select-btn"
@@ -114,10 +115,12 @@ const Hero: React.FC = () => {
                   >
                     {selected.length > 0
                       ? selected
-                          .map((val) => options.find((o) => o.value === val)?.label)
+                          .map(
+                            (val) => options.find((o) => o.value === val)?.label
+                          )
                           .join(", ")
                       : "Select Topics"}
-                    <ChevronDown className={`arrow ${isOpen ? "open" : ""}`}  />
+                    <ChevronDown className={`arrow ${isOpen ? "open" : ""}`} />
                   </button>
 
                   {isOpen && (

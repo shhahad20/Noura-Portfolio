@@ -89,7 +89,12 @@ const Hero: React.FC = () => {
           </motion.div>
 
           {/* CHATBOT AI INPUT */}
-          <div className="chatbot-wrapper">
+          <motion.div
+            className="chatbot-wrapper"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 1 }}
+          >
             <div className="chatbot--professional">
               <div className="chatbot__header">
                 <span className="chatbot__title">Quick Access Using AI</span>
@@ -105,7 +110,6 @@ const Hero: React.FC = () => {
                 />
 
                 {/* Custom Select */}
-
                 <div className="custom-select" ref={dropdownRef}>
                   <button
                     className="select-btn"
@@ -146,7 +150,7 @@ const Hero: React.FC = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
         <hr />
       </main>

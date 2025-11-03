@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Send, ChevronDown, WandSparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import "../styles/Hero.scss";
 
@@ -18,6 +19,11 @@ const Hero: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
+  }, [i18n.language]);
 
   useEffect(() => {
     const el = heroRef.current;
@@ -82,9 +88,9 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
           >
-            <h2 className="hero__title">Hello! I'm Noura Altharwa</h2>
+            <h2 className="hero__title">{t("hero.title")}</h2>
             <h1 className="hero__greeting">
-              Bridging Business, Education & Technology
+              {t("hero.subtitle")}
             </h1>
           </motion.div>
 
@@ -104,7 +110,7 @@ const Hero: React.FC = () => {
                 <textarea
                   className="chatbot__textarea"
                   rows={2}
-                  placeholder="Type your message here..."
+                  placeholder={t("hero.placeholder")}
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                 />
@@ -123,7 +129,7 @@ const Hero: React.FC = () => {
                             (val) => options.find((o) => o.value === val)?.label
                           )
                           .join(", ")
-                      : "Select Topics"}
+                      : t("hero.selectTopics")}
                     <ChevronDown className={`arrow ${isOpen ? "open" : ""}`} />
                   </button>
 

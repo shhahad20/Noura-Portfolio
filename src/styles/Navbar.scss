@@ -67,6 +67,29 @@
         color: gray;
       }
     }
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: 1px solid #af772e;
+      border-radius: 4px;
+      padding: 4px 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: #af772e;
+      transition: all 0.3s ease;
+
+      svg {
+        stroke-width: 2;
+      }
+
+      &:hover {
+        background-color: #af772e;
+        color: #fff;
+      }
+    }
+
     &--open {
       display: flex;
       flex-direction: column;

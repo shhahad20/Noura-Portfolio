@@ -1,0 +1,18 @@
+{
+      "navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  }
+  ,
+  "hero": {
+    "title": "Hello! I'm Noura Altharwa",
+    "subtitle": "Bridging Business, Education & Technology",
+    "aiHeader": "Quick Access Using AI",
+    "placeholder": "Type your message here...",
+    "selectTopics": "Select Topics",
+    "send": "Send"
+  }
+}
+

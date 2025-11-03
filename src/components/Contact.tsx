@@ -55,10 +55,11 @@ const Contact: React.FC = () => {
             on future projects in tech, education, or business development.
           </h2>
 
-          <button className="contact__cta" aria-label="Get in touch">Get In Touch</button>
-
+          <button className="contact__cta" aria-label="Get in touch">
+            Get In Touch
+          </button>
         </motion.div>
-		<Footer/>
+        <Footer />
       </main>
     </section>
   );

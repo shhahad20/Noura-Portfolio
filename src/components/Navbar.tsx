@@ -1,9 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Languages } from "lucide-react";
+
+import { useTranslation } from "react-i18next";
+
 import "../styles/Navbar.scss";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const { i18n, t } = useTranslation();
+
+  useEffect(() => {
+    document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
+  }, [i18n.language]);
+
+  const toggleLang = () => {
+    const newLang = i18n.language === "en" ? "ar" : "en";
+    i18n.changeLanguage(newLang);
+  };
 
   return (
     <motion.nav
@@ -23,10 +37,25 @@ const Navbar: React.FC = () => {
           <span className="navbar__bar"></span>
         </button>
         <ul className={`navbar__links${open ? " navbar__links--open" : ""}`}>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#home">{t("navbar.home")}</a>
+          </li>
+          <li>
+            <a href="#about">{t("navbar.about")}</a>
+          </li>
+          <li>
+            <a href="#projects">{t("navbar.projects")}</a>
+          </li>
+          <li>
+            <a href="#contact">{t("navbar.contact")}</a>
+          </li>
+
+          <li>
+            <button className="lang-btn" onClick={toggleLang}>
+              <Languages size={18} />
+              <span>{i18n.language === "en" ? "العربية" : "English"}</span>
+            </button>
+          </li>
         </ul>
       </div>
     </motion.nav>

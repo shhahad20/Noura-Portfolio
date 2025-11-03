@@ -103,13 +103,13 @@ const Hero: React.FC = () => {
           >
             <div className="chatbot--professional">
               <div className="chatbot__header">
-                <span className="chatbot__title">Quick Access Using AI</span>
+                <span className="chatbot__title">{t("hero.aiHeader")}</span>
                 <WandSparkles className="ai-icon" color="#af772e" />
               </div>
               <div className="ai-input">
                 <textarea
                   className="chatbot__textarea"
-                  rows={2}
+                  rows={1}
                   placeholder={t("hero.placeholder")}
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
@@ -151,7 +151,7 @@ const Hero: React.FC = () => {
                 </div>
 
                 <button className="chatbot__send-btn" onClick={handleSend}>
-                  Send
+                  {t("hero.send")}
                   <Send size={14} />
                 </button>
               </div>

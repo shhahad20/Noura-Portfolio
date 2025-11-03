@@ -1,5 +1,28 @@
 @import "mixins";
 
+body[dir="rtl"] {
+  .hero__title {
+    margin-bottom: 1rem;
+  }
+  .chatbot__header {
+    width: 40%;
+  }
+  .custom-select {
+    .select-btn {
+      font-family: "Noto Kufi Arabic", sans-serif;
+    }
+  }
+  .chatbot__send-btn {
+    font-family: "Noto Kufi Arabic", sans-serif;
+  }
+  .ai-input {
+    gap: 0rem;
+    padding: 0 0.5rem;
+  }
+  .chatbot__textarea {
+    padding: 0.8rem 1rem;
+  }
+}
 .hero {
   position: relative;
   height: 100vh;
@@ -154,10 +177,9 @@
     line-height: 4.8rem;
     // width: 100%;
   }
-
   &__title {
     // font-size: 1.2rem;
-    @include header-style(4rem);
+    // @include header-style(4rem);
     font-size: clamp(1rem, 2.5vw, 1.2rem); //✨
     font-weight: 500;
     text-align: center;
@@ -165,8 +187,11 @@
     // margin: 0 0 0.5rem 0; //✨
     margin: 0;
     padding: 0;
-    // color: rgb(245, 224, 211);
-    // text-shadow: 0 0 30px rgba(20, 184, 166, 0.3);
+    font-weight: 600;
+    color: #fffaf6;
+    text-shadow: 0 0 20px rgba(238, 200, 175, 0.1),
+      0 0 10px rgba(238, 200, 175, 0.2), 0 0 10px rgba(238, 200, 175, 0.2);
+    text-align: center;
   }
   /* Professional Style */
   .chatbot-wrapper {
@@ -236,7 +261,7 @@
     background-color: #0806028b;
     border: 0.25px solid #af772e;
     border-radius: 10px;
-    // padding: 0rem 0.5rem;
+    padding: 0.5rem 0.5rem;
     box-shadow: 0 0 20px rgba(238, 200, 175, 0.1),
       0 0 10px rgba(238, 200, 175, 0.2), 0 0 10px rgba(238, 200, 175, 0.2);
   }
@@ -245,8 +270,8 @@
     // width: 100%;
     background: none;
     color: #ffe0b3;
-    padding: 0.5rem 1rem;
-    padding-top: 15px;
+    padding: 0rem 1rem;
+    // padding-top: 15px;
     padding-bottom: 0;
     border: none;
     // border-radius: 0.5rem;
@@ -269,7 +294,6 @@
     position: relative;
     display: inline-block;
     min-width: 100px;
-    // font-family: "Poppins", sans-serif;
 
     .select-btn {
       background: rgba(255, 225, 179, 0.23);
@@ -383,6 +407,11 @@
 
 // Responsive adjustments
 @media (max-width: 1024px) {
+      body[dir="rtl"] {
+    .chatbot__header {
+      width: 52%;
+    }
+  }
   .hero {
     .chatbot-wrapper {
       max-width: 100%;
@@ -390,6 +419,7 @@
   }
 }
 @media (max-width: 768px) {
+
   .hero {
     min-height: 100vh;
 
@@ -442,6 +472,14 @@
 
 // Small mobile devices
 @media (max-width: 480px) {
+  body[dir="rtl"] {
+    .chatbot__header {
+      width: 80%;
+    }
+    .chatbot__textarea {
+      text-align: right;
+    }
+  }
   .hero {
     min-height: 100vh;
 
@@ -500,19 +538,19 @@
         // border-radius: 6px;
         // gap: 0;
         font-size: 0; // hide text but keep button size
-      position: relative;
-      width: 30px;
+        position: relative;
+        width: 30px;
       }
-       .select-btn::before {
-      content: "+"; // show plus sign
-      font-size: 1rem;
-      color: #918168;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      // padding-right: 20px;
-      transform: translate(-50%, -50%);
-    }
+      .select-btn::before {
+        content: "+"; // show plus sign
+        font-size: 1rem;
+        color: #918168;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        // padding-right: 20px;
+        transform: translate(-50%, -50%);
+      }
       .arrow {
         // margin-left: 3px;
         display: none;

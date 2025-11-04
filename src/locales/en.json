@@ -35,6 +35,11 @@
     "exp5Desc": "Elaf Institute",
     "exp6": "Translator",
     "exp6Desc": "Freelance Translation Services"
+  },
+  "recentProjects": {
+    "title": "Recent Projects",
+    "subtitle": "Crafting digital experiences that make a difference",
+    "viewProject": "View Project"
   }
 }
 

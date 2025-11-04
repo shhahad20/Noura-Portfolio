@@ -1,29 +1,34 @@
 @import "mixins";
 
+// body[dir="rtl"] {
+//   .about {
+//     .about-container {
+//       .about-paragraph {
+//         text-align: justify;
+//       }
+//     }
+//   }
+// }
 .about {
   //   height: 100vh;
-
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-
-
-  .about__title{
+  .about__title {
     @include header-style(3rem);
     line-height: normal;
   }
   .about-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  // align-items: center;
-  width: 1200px;
-  gap: 1rem;
-  margin-top: 3rem;
-  flex-wrap: wrap; // allow wrapping for smaller screens
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // align-items: center;
+    width: 1200px;
+    gap: 1rem;
+    margin-top: 3rem;
+    flex-wrap: wrap; // allow wrapping for smaller screens
     color: #fff8f0;
     // .experience-keywords {
     //   width: 600px;
@@ -100,9 +105,10 @@
       // border: 1px solid rgba(255, 230, 190, 0.15);
       border-radius: 1.5rem;
 
-      h1, p{
-          font-size: 1.2rem;
-          font-weight: 400;
+      h1,
+      p {
+        font-size: 1.2rem;
+        font-weight: 400;
       }
     }
   }
@@ -152,19 +158,18 @@
       .about-paragraph {
         width: 100%;
       }
-
     }
   }
 }
 
 @media (max-width: 480px) {
   .about {
-      .about__title{
-    @include header-style(2.5rem);
-    line-height: normal;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
+    .about__title {
+      @include header-style(2.5rem);
+      line-height: normal;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
 
     margin-top: 2.5rem;
     .about-container {
@@ -172,8 +177,9 @@
 
       .about-paragraph {
         padding: 0rem;
-        p { font-size: 1.2rem; 
-        // text-align: justify; 
+        p {
+          font-size: 1.2rem;
+          // text-align: justify;
         }
       }
     }

@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/About2.scss";
+import { useTranslation } from "react-i18next";
 
 const ScrollPetal: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const petalRefs = useRef<Array<SVGPathElement | null>>([]);
   const textRefs = useRef<Array<HTMLDivElement | null>>([]);
- 
+  const { t, i18n } = useTranslation();
+
   // store lengths in a ref so changes don't retrigger renders
   const petalLengthsRef = useRef<number[]>([]);
 
@@ -170,14 +172,19 @@ const ScrollPetal: React.FC = () => {
             />
           </svg>
 
-          <div className="text-container" aria-hidden={false}>
+          <div
+            className={`text-container ${
+              i18n.language === "ar" ? "text-container--ar" : ""
+            }`}
+            aria-hidden={false}
+          >
             <div
               className="petal-text"
               ref={(el) => setTextRef(el, 0)}
               aria-live="polite"
             >
-              Faculty Member
-              <p className="prof-name">Saudi Electronic University</p>
+              {t("about2.exp1")}
+              <p className="prof-name">{t("about2.exp1Desc")}</p>
               <p className="prod-date">2024 - 2025</p>
             </div>
 
@@ -186,8 +193,8 @@ const ScrollPetal: React.FC = () => {
               ref={(el) => setTextRef(el, 1)}
               aria-live="polite"
             >
-              Business Application Developer
-              <p className="prof-name">Apple Academy</p>
+              {t("about2.exp2")}
+              <p className="prof-name">{t("about2.exp2Desc")}</p>
               <p className="prod-date">2022 - 2024</p>
             </div>
 
@@ -196,8 +203,8 @@ const ScrollPetal: React.FC = () => {
               ref={(el) => setTextRef(el, 2)}
               aria-live="polite"
             >
-              Co-Founder and Director
-              <p className="prof-name">LAN &amp; Munchable - Startups</p>
+              {t("about2.exp3")}
+              <p className="prof-name">{t("about2.exp3Desc")}</p>
               <p className="prod-date">2022 - 2024</p>
             </div>
 
@@ -206,8 +213,8 @@ const ScrollPetal: React.FC = () => {
               ref={(el) => setTextRef(el, 3)}
               aria-live="polite"
             >
-              Business owner
-              <p className="prof-name">Brown - Home Bakery</p>
+              {t("about2.exp4")}
+              <p className="prof-name">{t("about2.exp4Desc")}</p>
               <p className="prod-date">2020 - Present</p>
             </div>
 
@@ -217,8 +224,8 @@ const ScrollPetal: React.FC = () => {
               ref={(el) => setTextRef(el, 4)}
               aria-live="polite"
             >
-              English Language Instructor
-              <p className="prof-name">ELAF Institute</p>
+              {t("about2.exp5")}
+              <p className="prof-name">{t("about2.exp5Desc")}</p>
               <p className="prod-date">2019 - 2021</p>
             </div>
 
@@ -227,8 +234,8 @@ const ScrollPetal: React.FC = () => {
               ref={(el) => setTextRef(el, 5)}
               aria-live="polite"
             >
-              Translator
-              <p className="prof-name">Freelance Translation Services</p>
+              {t("about2.exp6")}
+              <p className="prof-name">{t("about2.exp6Desc")}</p>
               <p className="prod-date">2016 - 2018</p>
             </div>
           </div>

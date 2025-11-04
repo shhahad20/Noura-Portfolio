@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 // import { easeInOut } from "framer-motion";
 import "../styles/Contact.scss";
 import Footer from "./Footer";
+import { useTranslation } from "react-i18next";
 
 // const containerVariants = {
 // 	hidden: { opacity: 0, y: 60 },
@@ -19,6 +20,7 @@ import Footer from "./Footer";
 
 const Contact: React.FC = () => {
   const contactRef = useRef<HTMLElement | null>(null);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const el = contactRef.current;
@@ -41,7 +43,12 @@ const Contact: React.FC = () => {
   }, []);
 
   return (
-    <section className="contact-section" ref={contactRef}>
+    <section
+      className={`contact-section ${
+        i18n.language === "ar" ? "contact-section--ar" : ""
+      }`}
+      ref={contactRef}
+    >
       <main className="contact__frame">
         <motion.div
           className="contact__content"
@@ -49,14 +56,11 @@ const Contact: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
         >
-          <h1 className="contact__title">Want to make a difference? So do I</h1>
-          <h2 className="contact__greeting">
-            Let’s connect to share ideas, discuss partnerships, or collaborate
-            on future projects in tech, education, or business development.
-          </h2>
+          <h1 className="contact__title">{t("contact.title")}</h1>
+          <h2 className="contact__greeting">{t("contact.subtitle")}</h2>
 
           <button className="contact__cta" aria-label="Get in touch">
-            Get In Touch
+            {t("contact.btnText")}
           </button>
         </motion.div>
         <Footer />

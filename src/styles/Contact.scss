@@ -1,4 +1,17 @@
 @import "mixins";
+ body[dir="rtl"] {
+  .contact-section {
+    .contact__frame {
+      .contact__content {
+        .contact__cta{
+            font-family: "Noto Kufi Arabic", sans-serif;
+            font-size: 0.876rem;
+            padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+}
 
 .contact-section {
   position: relative;

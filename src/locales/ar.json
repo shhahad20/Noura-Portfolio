@@ -12,6 +12,12 @@
     "placeholder": "اكتب رسالتك هنا...",
     "selectTopics": "اختر المواضيع",
     "send": "إرسال"
+  },
+    "options": {
+    "general": "عام",
+    "business": "الأعمال",
+    "education": "التعليم",
+    "technology": "التقنية"
   }
   ,
   "about": {

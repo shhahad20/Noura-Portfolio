@@ -14,6 +14,13 @@
     "selectTopics": "Select Topics",
     "send": "Send"
   },
+  "options": {
+    "general": "General",
+    "business": "Business",
+    "education": "Education",
+    "technology": "Technology"
+  }
+,
     "about": {
     "title": "Where It All Began",
     "paragraph1": "Holds a Master’s degree in Executive Business Administration with First-Class Honors (Excellent). A part-time faculty member at the Saudi Electronic University. A graduate of the Apple Developer Academy. I have developed five applications in collaboration with my team, and I am currently managing two teams working on two different applications — one specializing in real estate technology and the other in food technology using artificial intelligence, which was selected as an innovative application.",

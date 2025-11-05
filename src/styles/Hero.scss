@@ -303,6 +303,7 @@ body[dir="rtl"] {
       padding: 2px 6px;
       font-size: 0.78rem;
       width: 100%;
+      width: auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -313,10 +314,10 @@ body[dir="rtl"] {
 
       transition: background 0.3s ease;
 
-      &:hover {
-        // background-color: #6b5840;
-        // color: #ffe0b3;
-      }
+      // &:hover {
+      //   // background-color: #6b5840;
+      //   // color: #ffe0b3;
+      // }
     }
 
     .arrow {
@@ -334,8 +335,13 @@ body[dir="rtl"] {
     .dropdown-menu {
       position: absolute;
       // top: 110%;
-      left: 0;
-      width: 100%;
+      top: calc(100% + 4px);
+      right: 0; /* pin to the right */
+      left: auto; /* important — remove any left positioning */
+      // left: 0;
+      // width: 100%;
+      width: max-content;
+      min-width: 110px;
       background-color: #5a4a35;
       border: 1px solid #d6b07e;
       border-radius: 8px;
@@ -407,7 +413,7 @@ body[dir="rtl"] {
 
 // Responsive adjustments
 @media (max-width: 1024px) {
-      body[dir="rtl"] {
+  body[dir="rtl"] {
     .chatbot__header {
       width: 52%;
     }
@@ -419,7 +425,6 @@ body[dir="rtl"] {
   }
 }
 @media (max-width: 768px) {
-
   .hero {
     min-height: 100vh;
 
@@ -540,6 +545,7 @@ body[dir="rtl"] {
         font-size: 0; // hide text but keep button size
         position: relative;
         width: 30px;
+        // height: 30px;
       }
       .select-btn::before {
         content: "+"; // show plus sign
@@ -556,6 +562,10 @@ body[dir="rtl"] {
         display: none;
       }
       .dropdown-menu {
+        right: 0;
+        left: auto;
+        width: 70px; /* your desired mobile width */
+        min-width: unset;
         li {
           font-size: 0.6rem;
         }

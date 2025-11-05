@@ -5,12 +5,6 @@ import { useTranslation } from "react-i18next";
 
 import "../styles/Hero.scss";
 
-const options = [
-  { value: "general", label: "General" },
-  { value: "business", label: "Business" },
-  { value: "education", label: "Education" },
-  { value: "technology", label: "Technology" },
-];
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLElement | null>(null);
@@ -20,6 +14,13 @@ const Hero: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
   const { t, i18n } = useTranslation();
+
+  const options = [
+    { value: "general", label: t("options.general") },
+    { value: "business", label: t("options.business") },
+    { value: "education", label: t("options.education") },
+    { value: "technology", label: t("options.technology") },
+  ];
 
   useEffect(() => {
     document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";

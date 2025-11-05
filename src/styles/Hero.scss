@@ -478,6 +478,11 @@ body[dir="rtl"] {
 // Small mobile devices
 @media (max-width: 480px) {
   body[dir="rtl"] {
+    .hero{
+      &__greeting{
+        line-height: 3rem;
+      }
+    }
     .chatbot__header {
       width: 80%;
     }

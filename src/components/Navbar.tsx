@@ -19,6 +19,10 @@ const Navbar: React.FC = () => {
     i18n.changeLanguage(newLang);
   };
 
+    const handleLinkClick = () => {
+    setOpen(false);
+  };
+
   return (
     <motion.nav
       className="navbar"
@@ -38,20 +42,23 @@ const Navbar: React.FC = () => {
         </button>
         <ul className={`navbar__links${open ? " navbar__links--open" : ""}`}>
           <li>
-            <a href="#home">{t("navbar.home")}</a>
+            <a href="#home" onClick={handleLinkClick}>{t("navbar.home")}</a>
           </li>
           <li>
-            <a href="#about">{t("navbar.about")}</a>
+            <a href="#about" onClick={handleLinkClick}>{t("navbar.about")}</a>
           </li>
           <li>
-            <a href="#projects">{t("navbar.projects")}</a>
+            <a href="#projects" onClick={handleLinkClick}>{t("navbar.projects")}</a>
           </li>
           <li>
-            <a href="#contact">{t("navbar.contact")}</a>
+            <a href="#contact" onClick={handleLinkClick}>{t("navbar.contact")}</a>
           </li>
 
           <li>
-            <button className="lang-btn" onClick={toggleLang}>
+            <button className="lang-btn" onClick={() => {
+                toggleLang();
+                handleLinkClick();
+              }}>
               <Languages size={18} />
               <span>{i18n.language === "en" ? "العربية" : "English"}</span>
             </button>

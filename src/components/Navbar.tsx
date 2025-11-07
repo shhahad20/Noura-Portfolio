@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
         </button>
         <ul className={`navbar__links${open ? " navbar__links--open" : ""}`}>
           <li>
-            <a href="#home" onClick={handleLinkClick}>{t("navbar.home")}</a>
+            <a href="#" onClick={handleLinkClick}>{t("navbar.home")}</a>
           </li>
           <li>
             <a href="#about" onClick={handleLinkClick}>{t("navbar.about")}</a>

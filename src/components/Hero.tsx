@@ -4,11 +4,20 @@ import { Send, ChevronDown, WandSparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import "../styles/Hero.scss";
+import ChatModal from "./ChatModal";
 
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLElement | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+    const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [inputValue, setInputValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -68,10 +77,10 @@ const Hero: React.FC = () => {
     setIsOpen(false); // closes dropdown when selecting an option
   };
 
-  const handleSend = () => {
-    console.log("Message:", inputValue);
-    console.log("Selected Sections:", selected);
-  };
+  // const handleSend = () => {
+  //   console.log("Message:", inputValue);
+  //   console.log("Selected Sections:", selected);
+  // };
 
   return (
     <section className="hero" ref={heroRef}>
@@ -151,7 +160,7 @@ const Hero: React.FC = () => {
                   )}
                 </div>
 
-                <button className="chatbot__send-btn" onClick={handleSend}>
+                <button className="chatbot__send-btn" onClick={openModal}>
                   {t("hero.send")}
                   <Send size={14} />
                 </button>
@@ -161,6 +170,7 @@ const Hero: React.FC = () => {
         </section>
         <hr />
       </main>
+       {isModalOpen && <ChatModal closeModal={closeModal} />}
     </section>
   );
 };

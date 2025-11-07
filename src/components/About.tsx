@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import "../styles/About.scss";
 import { useTranslation } from "react-i18next";
+import Education from "./Education";
 
 const About: React.FC = () => {
   const aboutRef = useRef(null);
@@ -17,6 +18,7 @@ const About: React.FC = () => {
     <section
       className={`about ${i18n.language === "ar" ? "about--ar" : ""}`}
       ref={aboutRef}
+      id="about"
     >
       {/* Title motion */}
       <motion.div
@@ -50,6 +52,7 @@ const About: React.FC = () => {
             {t("about.paragraph3")}
           </motion.p>
         </div>
+      <Education/>
 
         {/* Content section */}
         <div className="content-section">

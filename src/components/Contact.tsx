@@ -48,6 +48,7 @@ const Contact: React.FC = () => {
         i18n.language === "ar" ? "contact-section--ar" : ""
       }`}
       ref={contactRef}
+      id="contact"
     >
       <main className="contact__frame">
         <motion.div

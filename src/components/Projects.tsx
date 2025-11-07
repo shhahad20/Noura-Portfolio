@@ -114,7 +114,7 @@ const RecentProjects = () => {
     }
   };
   return (
-    <div className={`recent-projects ${isArabic ? "rtl" : ""}`} ref={ref}>
+    <div className={`recent-projects ${isArabic ? "rtl" : ""}`} ref={ref} id="projects">
       <div className="recent-projects__container">
         {/* Header Section */}
         <div className="recent-projects__header">

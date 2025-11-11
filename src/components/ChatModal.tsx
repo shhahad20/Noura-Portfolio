@@ -3,6 +3,7 @@ import  { useState } from "react";
 // import { API_URL } from "../api/api";
 import "../styles/ChatModal.scss";
 import { Bot, Forward } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 // Define the types for the moods
 // type ChatMood = "greeting" | "thinking" | "answering" | "idle" | "idk";
@@ -13,11 +14,12 @@ interface ChatModalProps {
 }
 
 const ChatModal : React.FC<ChatModalProps> = ({ closeModal }) => {
+  const { t, i18n } = useTranslation();
   const [messages, setMessages] = useState([
     {
       role: "assistant",
       content:
-        "Hi there! Ask me about Noura's education, experience, or anything else.",
+        t("ai.startingMsg"),
     },
   ]);
   const [input, setInput] = useState("");
@@ -66,7 +68,7 @@ const ChatModal : React.FC<ChatModalProps> = ({ closeModal }) => {
       console.error("Error fetching AI response", error);
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: "Sorry, something went wrong." },
+        { role: "assistant", content: t("ai.error") },
       ]);
     //   setChatMood("idk");
     } finally {
@@ -75,14 +77,14 @@ const ChatModal : React.FC<ChatModalProps> = ({ closeModal }) => {
   };
 
   return (
-    <div className="chat-modal-overlay">
+    <div className= {`chat-modal-overlay ${i18n.language === "ar" ? "chat-modal-overlay--ar" : ""}`}>
       <div className="chat-modal">
         {/* Header with a title and a close (X) button */}
         <div className="chat-header">
           <div className="chat-title">
             {" "}
             {/* <img src="logo-blue-light.svg" alt="AI Logo" width="20%" /> */}
-            <h2>Noura's AI Assistant</h2>
+            <h2>{t("ai.title")}</h2>
           </div>
           <button className="close-btn" onClick={closeModal}>
             &times;
@@ -103,14 +105,14 @@ const ChatModal : React.FC<ChatModalProps> = ({ closeModal }) => {
               {msg.content}
             </div>
           ))}
-          {loading && <div className="message assistant">Typing...</div>}
+          {loading && <div className="message assistant">{t("ai.writting")}</div>}
         </div>
 
         {/* Input row */}
         <div className="chat-input">
           <input
             type="text"
-            placeholder="Ask your question..."
+            placeholder={t("ai.placeholder")}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => {

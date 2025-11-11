@@ -19,6 +19,15 @@
     "business": "Business",
     "education": "Education",
     "technology": "Technology"
+  },
+  "ai":{
+    "title": "Noura's Ai Assistant",
+    "responseHeader": "AI-Powered Responses",
+    "placeholder": "Type your question here...",
+    "startingMsg": "How can I assist you today?",
+    "loading": "Loading...",
+    "writting": "Typing...",
+    "error": "Something went wrong. Please try again."
   }
 ,
     "about": {

@@ -2,6 +2,8 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import "../styles/RecentProjects.scss";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+
 
 const RecentProjects = () => {
   const ref = useRef(null);
@@ -225,7 +227,7 @@ const RecentProjects = () => {
                       animate={{ scale: hoveredProject === project.id ? 1 : 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      {t("recentProjects.viewProject")}
+                      <Link to={`/projects/${project.id}`}>{t("recentProjects.viewProject")}</Link>
                     </motion.div>
                   </div>
                   <div

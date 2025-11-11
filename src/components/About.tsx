@@ -2,17 +2,17 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import "../styles/About.scss";
 import { useTranslation } from "react-i18next";
-import Education from "./Education";
+// import Education from "./Education";
 
 const About: React.FC = () => {
   const aboutRef = useRef(null);
-  const h2Ref = useRef(null);
-  const pRef = useRef(null);
+  // const h2Ref = useRef(null);
+  // const pRef = useRef(null);
   const { t, i18n } = useTranslation();
 
   const aboutInView = useInView(aboutRef, { once: true, margin: "-100px" });
-  const h2InView = useInView(h2Ref, { once: true, margin: "-100px" });
-  const pInView = useInView(pRef, { once: true, margin: "-50px" });
+  // const h2InView = useInView(h2Ref, { once: true, margin: "-100px" });
+  // const pInView = useInView(pRef, { once: true, margin: "-50px" });
 
   return (
     <section
@@ -52,10 +52,10 @@ const About: React.FC = () => {
             {t("about.paragraph3")}
           </motion.p>
         </div>
-      <Education/>
+      {/* <Education/> */}
 
         {/* Content section */}
-        <div className="content-section">
+        {/* <div className="content-section">
           <motion.h2
             ref={h2Ref}
             initial={{ opacity: 0, y: 30 }}
@@ -73,7 +73,7 @@ const About: React.FC = () => {
           >
             {t("about.subtext")}
           </motion.p>
-        </div>
+        </div> */}
       </motion.div>
     </section>
   );

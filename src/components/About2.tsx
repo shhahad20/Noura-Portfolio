@@ -1,11 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/About2.scss";
 import { useTranslation } from "react-i18next";
+// import { motion, useInView } from "framer-motion";
 
 const ScrollPetal: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const petalRefs = useRef<Array<SVGPathElement | null>>([]);
   const textRefs = useRef<Array<HTMLDivElement | null>>([]);
+  // const h2Ref = useRef(null);
+  //   const pRef = useRef(null);
+  
+  // const h2InView = useInView(h2Ref, { once: true, margin: "-100px" });
+  // const pInView = useInView(pRef, { once: true, margin: "-50px" });
+
   const { t, i18n } = useTranslation();
 
   // store lengths in a ref so changes don't retrigger renders
@@ -134,8 +141,23 @@ const ScrollPetal: React.FC = () => {
       <div className="spacer" />
 
       {/* <div className="content-section">
-        <h2>What I’ve Been Working On</h2>
-        <p>Professional Experience</p>
+        <motion.h2
+          ref={h2Ref}
+          initial={{ opacity: 0, y: 30 }}
+          animate={h2InView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          {t("about.subtitle")}
+        </motion.h2>
+
+        <motion.p
+          ref={pRef}
+          initial={{ opacity: 0, y: 30 }}
+          animate={pInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+        >
+          {t("about.subtext")}
+        </motion.p>
       </div> */}
 
       <div className="svg-container" ref={containerRef}>

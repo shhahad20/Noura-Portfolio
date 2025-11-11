@@ -14,6 +14,7 @@ import Contact from './components/Contact';
 import Hero from "./components/Hero";
 import InfiniteScrollText from "./components/InfiniteScrollText";
 import ScrollPetal from "./components/About2";
+import Education from "./components/Education";
 // import Hero4 from './components/Hero4';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       {/* <Hero /> */}
       <Hero />
       <About/>
+      <Education/>
       <ScrollPetal/>
       <RecentProjects />
       <InfiniteScrollText/>

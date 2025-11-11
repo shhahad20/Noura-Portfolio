@@ -1,22 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-// import { easeInOut } from "framer-motion";
-import "../styles/Contact.scss";
 import Footer from "./Footer";
 import { useTranslation } from "react-i18next";
+import "../styles/Contact.scss";
+import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
 
-// const containerVariants = {
-// 	hidden: { opacity: 0, y: 60 },
-// 	visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeInOut } },
-// };
-// const itemVariants = {
-// 	hidden: { opacity: 0, y: 40 },
-// 	visible: (i: number) => ({
-// 		opacity: 1,
-// 		y: 0,
-// 		transition: { delay: 0.2 + i * 0.15, duration: 0.7, ease: easeInOut },
-// 	}),
-// };
 
 const Contact: React.FC = () => {
   const contactRef = useRef<HTMLElement | null>(null);
@@ -63,6 +51,24 @@ const Contact: React.FC = () => {
           <button className="contact__cta" aria-label="Get in touch">
             {t("contact.btnText")}
           </button>
+
+
+          {/* 👇 Social media icons */}
+          <div className="contact__socials">
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+              <Instagram/>
+            </a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+              <Twitter />
+            </a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+              <Linkedin />
+            </a>
+            <a href="https://github.com" target="_blank" aria-label="GitHub">
+              <Github />
+            </a>
+          </div>
+
         </motion.div>
         <Footer />
       </main>

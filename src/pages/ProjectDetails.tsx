@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import "../styles/ProjectDetails.scss";
+import "../styles/projectDetails.scss";
 
 const projects = [
   {
